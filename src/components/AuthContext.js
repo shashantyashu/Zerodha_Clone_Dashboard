@@ -12,7 +12,7 @@ export const AuthProvider = ({ children }) => {
     const verifyUser = async () => {
       try {
         const { data } = await axios.post(
-          "http://localhost:3002",
+          "https://zerodha-clone-dashboard-kr6s.onrender.com",
           {},
           { withCredentials: true }
         );

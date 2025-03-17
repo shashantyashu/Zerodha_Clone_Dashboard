@@ -31,7 +31,7 @@ const LoginPage = () => {
     e.preventDefault();
     try {
       const { data } = await axios.post(
-        "http://localhost:3002/login",
+        "https://zerodha-clone-dashboard-kr6s.onrender.com/login",
         {
           ...inputValue,
         },

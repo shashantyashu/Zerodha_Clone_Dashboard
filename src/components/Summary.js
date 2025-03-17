@@ -23,7 +23,7 @@ const Summary = () => {
         }, 1000)
       }
       const { data } = await axios.post(
-        "http://localhost:3002",
+        "https://zerodha-clone-dashboard-kr6s.onrender.com",
         {},
         { withCredentials: true }
       );
