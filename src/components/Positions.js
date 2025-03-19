@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import axios, { all } from "axios";
+import axios from "axios";
 
 // import { positions } from "../data/data";
 
@@ -7,7 +7,7 @@ const Positions = () => {
   const [allPosition, setAllPosition] = useState([]);
 
   useEffect(() => {
-    axios.get("https://zerodha-clone-dashboard-kr6s.onrender.com/allPositions").then((res) => {
+    axios.get("https://zerodha-clone-backend-1qno.onrender.com/allPositions").then((res) => {
       // console.log(res.data);
       setAllPosition(res.data);
     });

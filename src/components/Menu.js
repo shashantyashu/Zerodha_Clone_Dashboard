@@ -12,7 +12,7 @@ const Menu = () => {
       const verifyCookie = async () => {
       
         const { data } = await axios.post(
-          "https://zerodha-clone-dashboard-kr6s.onrender.com",
+          "https://zerodha-clone-backend-1qno.onrender.com",
           {},
           { withCredentials: true }
         );

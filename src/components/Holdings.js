@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
-import axios, { all } from "axios";
-import { useNavigate } from "react-router-dom";
-import { useCookies } from "react-cookie";
+import axios from "axios";
 import { VerticalGraph } from "./VerticalGraph";
 
 // import { holdings } from "../data/data";
@@ -11,7 +9,7 @@ const Holdings = () => {
 
   useEffect(() => {
 
-    axios.get("https://zerodha-clone-dashboard-kr6s.onrender.com/allHoldings").then((res) => {
+    axios.get("https://zerodha-clone-backend-1qno.onrender.com/allHoldings").then((res) => {
       // console.log(res.data);
       setAllHoldings(res.data);
     }); 
