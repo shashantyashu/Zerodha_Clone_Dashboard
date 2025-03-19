@@ -53,5 +53,12 @@
   },
   "devDependencies": {
     "ajv": "^7.2.4"
+  },
+  "overrides": {
+    "postcss":"8.5.3"
+    ,
+    "svgo":{
+      "nth-check":"2.1.1"
+    }
   }
 }
