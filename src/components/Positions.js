@@ -6,12 +6,12 @@ import axios from "axios";
 const Positions = () => {
   const [allPosition, setAllPosition] = useState([]);
 
-  useEffect(() => {
-    axios.get("https://zerodha-clone-backend-1qno.onrender.com/allPositions").then((res) => {
-      // console.log(res.data);
-      setAllPosition(res.data);
-    });
-  }, []);
+  // useEffect(() => {
+  //   axios.get("https://zerodha-clone-backend-1qno.onrender.com/allPositions").then((res) => {
+  //     // console.log(res.data);
+  //     setAllPosition(res.data);
+  //   });
+  // }, []);
 
   return (
     <>
