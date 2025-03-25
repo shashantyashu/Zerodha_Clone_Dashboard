@@ -3,15 +3,13 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useCookies } from "react-cookie";
 import axios from "axios";
-import Cookiess from "universal-cookie";
+// import Cookiess from "universal-cookie";
 
 const Summary = () => {
   const navigate = useNavigate();
   const [cookies, removeCookies] = useCookies([]);
   const [username, setUsername] = useState("");
   // const cookiess = new Cookiess();
-
-  let i = 1;
   
   useEffect(() => {
     const verifyCookie = async () => {
@@ -33,10 +31,9 @@ const Summary = () => {
       setUsername(user);  
       return status;
     };
-    if(i===1){
-      ++i;
-      verifyCookie();
-    } 
+    
+    verifyCookie();
+    
   }, [cookies, navigate, removeCookies]);
   
   const Logout = () => {
