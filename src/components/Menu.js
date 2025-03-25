@@ -8,20 +8,20 @@ const Menu = () => {
   const [isProfileDropdownOpen, setIsProfileDropdownOpen] = useState(false);
   const [username, setUsername] = useState("");
 
-  // useEffect(() => {
-  //     const verifyCookie = async () => {
+  useEffect(() => {
+      const verifyCookie = async () => {
       
-  //       const { data } = await axios.post(
-  //         "https://zerodha-clone-backend-1qno.onrender.com",
-  //         {},
-  //         { withCredentials: true }
-  //       );
-  //       const { status, user } = data;
-  //       setUsername(user); 
-  //     };
-  //     verifyCookie();
+        const { data } = await axios.post(
+          "https://zerodha-clone-backend-9l0d.onrender.com",
+          {},
+          { withCredentials: true }
+        );
+        const { status, user } = data;
+        setUsername(user); 
+      };
+      verifyCookie();
       
-  //   });
+    });
     
 
   const handleMenuClick = (index) => {

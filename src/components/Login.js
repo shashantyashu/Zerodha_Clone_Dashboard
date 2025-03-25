@@ -31,19 +31,25 @@ const LoginPage = () => {
     e.preventDefault();
     try {
       const { data } = await axios.post(
-        "https://zerodha-clone-backend-1qno.onrender.com/login",
+        "https://zerodha-clone-backend-9l0d.onrender.com/login",
         {
           ...inputValue,
         },
         { withCredentials: true }
       );
-      console.log(data);
-      const { success, message } = data;
+      // console.log(data);
+      // const { success, message } = data;
+      // if (success) {
+      //   handleSuccess(message);
+      //   setTimeout(() => {
+      //     navigate("/");
+      //   }, 1000);
+      // }
+      const { success, message, token } = data;
       if (success) {
+        localStorage.setItem("token", token);
         handleSuccess(message);
-        setTimeout(() => {
-          navigate("/");
-        }, 1000);
+        navigate("/");
       } else {
         handleError(message);
       }
@@ -59,36 +65,36 @@ const LoginPage = () => {
 
   return (
     <div className="Login_Body mt-5 mb-5">
-    <div className="form_container">
-      <h2>Login Account</h2>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="email">Email</label>
-          <input
-            type="email"
-            name="email"
-            value={email}
-            placeholder="Enter your email"
-            onChange={handleOnChange}
-          />
-        </div>
-        <div>
-          <label htmlFor="password">Password</label>
-          <input
-            type="password"
-            name="password"
-            value={password}
-            placeholder="Enter your password"
-            onChange={handleOnChange}
-          />
-        </div>
-        <button type="submit">Submit</button>
-        <span>
-          Already have an account? <Link to={"/signup"}>Signup</Link>
-        </span>
-      </form>
-      <ToastContainer />
-    </div>
+      <div className="form_container">
+        <h2>Login Account</h2>
+        <form onSubmit={handleSubmit}>
+          <div>
+            <label htmlFor="email">Email</label>
+            <input
+              type="email"
+              name="email"
+              value={email}
+              placeholder="Enter your email"
+              onChange={handleOnChange}
+            />
+          </div>
+          <div>
+            <label htmlFor="password">Password</label>
+            <input
+              type="password"
+              name="password"
+              value={password}
+              placeholder="Enter your password"
+              onChange={handleOnChange}
+            />
+          </div>
+          <button type="submit">Submit</button>
+          <span>
+            Already have an account? <Link to={"/signup"}>Signup</Link>
+          </span>
+        </form>
+        <ToastContainer />
+      </div>
     </div>
   );
 };

@@ -13,36 +13,36 @@ const Summary = () => {
 
   let i = 1;
   
-  // useEffect(() => {
-  //   const verifyCookie = async () => {
-  //     // console.log(cookies.token); this dons't work .
-  //     // console.log("Token:", cookiess.get("token")); // that why this i have used this method.
-  //     if (!cookiess.get("token")) {
-  //       setTimeout(() => {
-  //       navigate("/login");
-  //       }, 1000)
-  //     }
-  //     const { data } = await axios.post(
-  //       "https://zerodha-clone-backend-1qno.onrender.com",
-  //       {},
-  //       { withCredentials: true }
-  //     );
-  //     const { status, user } = data;
-  //     setUsername(user);  
-  //   };
-  //   if(i==1){
-  //     ++i;
-  //     verifyCookie();
-  //   }
-    
-    
-    
-  // }, [cookies, navigate, removeCookies]);
+  useEffect(() => {
+    const verifyCookie = async () => {
+      // console.log(cookies.token); this dons't work .
+      // console.log("Token:", cookiess.get("token")); // that why this i have used this method.
+      // console.log(localStorage.getItem("token"));
+      // if (!cookiess.get("token")) {
+      if (!localStorage.getItem("token")) {
+        setTimeout(() => {
+        navigate("/login");
+        }, 1000)
+      }
+      const { data } = await axios.post(
+        "https://zerodha-clone-backend-9l0d.onrender.com",
+        {},
+        { withCredentials: true }
+      );
+      const { status, user } = data;
+      setUsername(user);  
+      return status;
+    };
+    if(i==1){
+      ++i;
+      verifyCookie();
+    } 
+  }, [cookies, navigate, removeCookies]);
   
-  // const Logout = () => {
-  //   removeCookies("token");
-  //   navigate("/signup");
-  // };
+  const Logout = () => {
+    removeCookies("token");
+    navigate("/signup");
+  };
 
   return (
     <>

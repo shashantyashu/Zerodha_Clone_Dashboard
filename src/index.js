@@ -13,13 +13,13 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   // <React.StrictMode>
     <BrowserRouter>
-    
+    {/* <AuthProvider> */}
       <Routes>
-        <Route path="/*" element={ <Home /> } />
+        <Route path="/*" element={<Home />  } />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<SignupPage />} />
       </Routes>
-      
+      {/* </AuthProvider> */}
     </BrowserRouter>
   // </React.StrictMode>
 );

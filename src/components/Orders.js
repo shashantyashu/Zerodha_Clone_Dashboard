@@ -5,12 +5,12 @@ import { Link } from "react-router-dom";
 const Orders = () => {
   const [allOrders, setAllOrders] = useState([]);
 
-  // useEffect(() => {
-  //     axios.get("https://zerodha-clone-backend-1qno.onrender.com/allOrders").then((res) => {
-  //       // console.log(res.data);
-  //       setAllOrders(res.data);
-  //     });
-  //   }, []);
+  useEffect(() => {
+      axios.get("https://zerodha-clone-backend-9l0d.onrender.com/allOrders").then((res) => {
+        // console.log(res.data);
+        setAllOrders(res.data);
+      });
+    }, []);
 
   return (
     <>

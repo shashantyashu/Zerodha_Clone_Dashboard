@@ -11,16 +11,16 @@ const BuyActionWindow = ({ uid }) => {
   const [stockQuantity, setStockQuantity] = useState(1);
   const [stockPrice, setStockPrice] = useState(0.0);
 
-  // const handleBuyClick = () => {
-  //   axios.post("https://zerodha-clone-backend-1qno.onrender.com/newOrder", {
-  //     name: uid,
-  //     qty: stockQuantity,
-  //     price: stockPrice,
-  //     mode: "BUY",
-  //   });
+  const handleBuyClick = () => {
+    axios.post("https://zerodha-clone-backend-9l0d.onrender.com/newOrder", {
+      name: uid,
+      qty: stockQuantity,
+      price: stockPrice,
+      mode: "BUY",
+    });
 
-  //   GeneralContext.closeBuyWindow();
-  // };
+    GeneralContext.closeBuyWindow();
+  };
 
   const handleCancelClick = () => {
     GeneralContext.closeBuyWindow();

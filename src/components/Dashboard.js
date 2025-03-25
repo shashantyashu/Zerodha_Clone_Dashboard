@@ -10,8 +10,8 @@ import Positions from "./Positions";
 import Summary from "./Summary";
 import WatchList from "./WatchList";
 import { GeneralContextProvider } from "./GeneralContext";
-// import ProtectedRoute from "./ProtectedRoute";
-// import { AuthProvider } from "./AuthContext";
+import ProtectedRoute from "./ProtectedRoute";
+import { AuthProvider } from "./AuthContext";
 
 const Dashboard = () => {
   return (
@@ -21,7 +21,7 @@ const Dashboard = () => {
       </GeneralContextProvider>
 
       <div className="content">
-        {/* <AuthProvider> */}
+        <AuthProvider>
           <Routes>
             <Route
               exact
@@ -36,50 +36,50 @@ const Dashboard = () => {
             <Route
               path="/orders"
               element={
-                // <ProtectedRoute>
+                <ProtectedRoute>
                  
                   <Orders />
-                // </ProtectedRoute>
+                </ProtectedRoute>
               }
             />
             <Route
               path="/holdings"
               element={
-                // <ProtectedRoute>
+                <ProtectedRoute>
                   
                   <Holdings />
-                // </ProtectedRoute>
+                </ProtectedRoute>
               }
             />
             <Route
               path="/positions"
               element={
-                // <ProtectedRoute>
+                <ProtectedRoute>
                  
                   <Positions />
-                // </ProtectedRoute>
+                </ProtectedRoute>
               }
             />
             <Route
               path="/funds"
               element={
-                // <ProtectedRoute>
+                <ProtectedRoute>
                   
                   <Funds />
-                // </ProtectedRoute>
+                </ProtectedRoute>
               }
             />
             <Route
               path="/apps"
               element={
-                // <ProtectedRoute>
+                <ProtectedRoute>
                  
                   <Apps />
-                // </ProtectedRoute>
+                </ProtectedRoute>
               }
             />
           </Routes>
-        {/* </AuthProvider> */}
+        </AuthProvider>
       </div>
     </div>
   );
