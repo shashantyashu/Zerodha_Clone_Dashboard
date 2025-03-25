@@ -85,7 +85,7 @@ export const AuthProvider = ({ children }) => {
     };
 
     verifyUser();
-  }, []);
+  });
 
   return (
     <AuthContext.Provider value={{ user, setUser }}>
