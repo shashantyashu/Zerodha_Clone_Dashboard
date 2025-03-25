@@ -9,7 +9,7 @@ const Summary = () => {
   const navigate = useNavigate();
   const [cookies, removeCookies] = useCookies([]);
   const [username, setUsername] = useState("");
-  const cookiess = new Cookiess();
+  // const cookiess = new Cookiess();
 
   let i = 1;
   
@@ -33,7 +33,7 @@ const Summary = () => {
       setUsername(user);  
       return status;
     };
-    if(i==1){
+    if(i===1){
       ++i;
       verifyCookie();
     } 

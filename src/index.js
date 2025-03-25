@@ -6,8 +6,8 @@ import Home from "./components/Home";
 import 'react-toastify/dist/ReactToastify.css';
 import LoginPage from './components/Login';
 import SignupPage from './components/Signup';
-import { AuthProvider } from './components/AuthContext';
-import ProtectedRoute from './components/ProtectedRoute';
+// import { AuthProvider } from './components/AuthContext';
+// import ProtectedRoute from './components/ProtectedRoute';
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
