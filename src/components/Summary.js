@@ -71,7 +71,7 @@ const Summary = () => {
         console.log("API Response:", data);
   
         const { status, user } = data;
-        if (status === "success") {
+        if (status === true) {
           setUsername(user);
         } else {
           setTimeout(() => {
