@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";  
-import axios from "axios";      
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 
 import { Link } from "react-router-dom";
 
@@ -9,20 +9,26 @@ const Menu = () => {
   const [username, setUsername] = useState("");
 
   useEffect(() => {
-      const verifyCookie = async () => {
-      
-        const { data } = await axios.post(
-          "https://zerodha-clone-backend-9l0d.onrender.com",
-          {},
-          { withCredentials: true }
-        );
-        const { user } = data;
-        setUsername(user); 
-      };
-      verifyCookie();
-      
-    });
-    
+    const verifyCookie = async () => {
+      const token = localStorage.getItem("token");
+      // const { data } = await axios.post(
+      //   "https://zerodha-clone-backend-9l0d.onrender.com",
+      //   {},
+      //   { withCredentials: true }
+      // );
+      const { data } = await axios.get(
+        "https://zerodha-clone-backend-9l0d.onrender.com/protected-route", // update with your backend's verify route
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+      const { user } = data;
+      setUsername(user);
+    };
+    verifyCookie();
+  });
 
   const handleMenuClick = (index) => {
     setSelectedMenu(index);
@@ -109,7 +115,7 @@ const Menu = () => {
         </ul>
         <hr />
         <div className="profile" onClick={handleProfileClick}>
-        <div className="avatar">
+          <div className="avatar">
             {username ? username[0].toUpperCase() : "U"} {/* Safe check */}
           </div>
           <p className="username">{username || "User"}</p>
