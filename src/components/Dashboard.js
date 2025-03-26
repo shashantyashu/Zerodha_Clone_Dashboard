@@ -28,9 +28,9 @@ const Dashboard = () => {
               path="/"
               element={
                 
-                  
+                <ProtectedRoute>
                   <Summary />
-                
+                </ProtectedRoute>
               }
             />
             <Route
