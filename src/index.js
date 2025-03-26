@@ -4,8 +4,8 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./index.css";
 import Home from "./components/Home";
 import 'react-toastify/dist/ReactToastify.css';
-import LoginPage from './components/Login';
-import SignupPage from './components/Signup';
+// import LoginPage from './components/Login';
+// import SignupPage from './components/Signup';
 // import { AuthProvider } from './components/AuthContext';
 // import ProtectedRoute from './components/ProtectedRoute';
 
@@ -16,8 +16,8 @@ root.render(
     {/* <AuthProvider> */}
       <Routes>
         <Route path="/*" element={<Home />  } />
-        <Route path="/login" element={<LoginPage />} />
-        <Route path="/signup" element={<SignupPage />} />
+        {/* <Route path="/login" element={<LoginPage />} /> */}
+        {/* <Route path="/signup" element={<SignupPage />} /> */}
       </Routes>
       {/* </AuthProvider> */}
     </BrowserRouter>
