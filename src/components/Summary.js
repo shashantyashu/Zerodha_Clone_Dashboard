@@ -27,6 +27,7 @@ const Summary = () => {
         {},
         { withCredentials: true }
       );
+      console.log
       const { status, user } = data;
       setUsername(user);  
       return status;
