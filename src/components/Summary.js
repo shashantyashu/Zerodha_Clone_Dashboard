@@ -43,7 +43,7 @@ const Summary = () => {
     };
 
     verifyCookie();
-  }, [cookies, navigate, removeCookies]);
+  }, [cookies, navigate, removeCookies]); 
 
   const Logout = () => {
     removeCookies("token");
