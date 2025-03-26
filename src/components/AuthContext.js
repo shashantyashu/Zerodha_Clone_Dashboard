@@ -53,7 +53,7 @@ export const AuthProvider = ({ children }) => {
   useEffect(() => {
     const verifyUser = async () => {
       const token = localStorage.getItem("token");
-      console.log(token)
+      // console.log(token)
 
       if (!token) {
         setUser(null);
