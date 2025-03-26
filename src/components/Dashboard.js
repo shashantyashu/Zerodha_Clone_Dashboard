@@ -21,7 +21,7 @@ const Dashboard = () => {
       </GeneralContextProvider>
 
       <div className="content">
-        <AuthProvider>
+        {/* <AuthProvider> */}
           <Routes>
             <Route
               exact
@@ -79,7 +79,7 @@ const Dashboard = () => {
               }
             />
           </Routes>
-        </AuthProvider>
+        {/* </AuthProvider> */}
       </div>
     </div>
   );
