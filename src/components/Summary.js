@@ -52,6 +52,7 @@ const Summary = () => {
         const token = localStorage.getItem("token");
         if (!token) {
           setTimeout(() => {
+            console.log("fail-1")
             navigate("/login");
           }, 10);
           return;
@@ -70,17 +71,19 @@ const Summary = () => {
   
         console.log("API Response:", data);
   
-        const { status, user } = data;
+        // const { status, user } = data;
         if (data.status === true) {
           setUsername(data.user);
         } else {
           setTimeout(() => {
+            console.log("fail-2");
             navigate("/login");
           }, 10);
         }
       } catch (error) {
         console.error("Error verifying token:", error);
         setTimeout(() => {
+          console.log("fail-3");
           navigate("/login");
         }, 10);
       }
