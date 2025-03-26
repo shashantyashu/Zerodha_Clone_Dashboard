@@ -35,7 +35,7 @@ const LoginPage = () => {
         {
           ...inputValue,
         },
-        // { withCredentials: true }
+        { withCredentials: true }
       );
       // console.log(data);
       // const { success, message } = data;
@@ -45,6 +45,7 @@ const LoginPage = () => {
       //     navigate("/");
       //   }, 1000);
       // }
+      console.log(data);
       const { success, message, token } = data;
       if (success) {
         localStorage.setItem("token", token);
