@@ -10,33 +10,41 @@ const Summary = () => {
   const [cookies, removeCookies] = useCookies([]);
   const [username, setUsername] = useState("");
   // const cookiess = new Cookiess();
-  
+
   useEffect(() => {
     const verifyCookie = async () => {
       // console.log(cookies.token); this dons't work .
       // console.log("Token:", cookiess.get("token")); // that why this i have used this method.
       // console.log(localStorage.getItem("token"));
       // if (!cookiess.get("token")) {
-      if (!localStorage.getItem("token")) {
+      const token = localStorage.getItem("token");
+      if (!token) {
         setTimeout(() => {
-        navigate("/login");
-        }, 1000)
+          navigate("/login");
+        }, 1000);
       }
-      const { data } = await axios.post(
-        "https://zerodha-clone-backend-9l0d.onrender.com",
-        {},
-        { withCredentials: true }
+      // const { data } = await axios.post(
+      //   "https://zerodha-clone-backend-9l0d.onrender.com",
+      //   {},
+      //   { withCredentials: true }
+      // );
+      const { data } = await axios.get(
+        "https://zerodha-clone-backend-9l0d.onrender.com/protected-route", // update with your backend's verify route
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
       );
-      console.log(data)
+      console.log(data);
       const { status, user } = data;
-      setUsername(user);  
+      setUsername(user);
       return status;
     };
-    
+
     verifyCookie();
-    
   }, [cookies, navigate, removeCookies]);
-  
+
   const Logout = () => {
     removeCookies("token");
     navigate("/signup");
