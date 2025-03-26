@@ -66,7 +66,7 @@ export const AuthProvider = ({ children }) => {
           "https://zerodha-clone-backend-9l0d.onrender.com/protected-route", // update with your backend's verify route
           {
             headers: {
-              Authorization:`${token}`
+              Authorization:`Bearer ${token}`
             },
           }
         );
