@@ -21,7 +21,7 @@ const Summary = () => {
       if (!token) {
         setTimeout(() => {
           navigate("/login");
-        }, 1000);
+        }, 10);
       }
       // const { data } = await axios.post(
       //   "https://zerodha-clone-backend-9l0d.onrender.com",
