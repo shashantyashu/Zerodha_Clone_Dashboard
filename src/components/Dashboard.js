@@ -28,54 +28,54 @@ const Dashboard = () => {
               path="/"
               element={
                 
-                <ProtectedRoute>
+                
                   <Summary />
-                </ProtectedRoute>
+                
               }
             />
             <Route
               path="/orders"
               element={
-                <ProtectedRoute>
+                // <ProtectedRoute>
                  
                   <Orders />
-                </ProtectedRoute>
+                // {/* </ProtectedRoute> */}
               }
             />
             <Route
               path="/holdings"
               element={
-                <ProtectedRoute>
+                // <ProtectedRoute>
                   
                   <Holdings />
-                </ProtectedRoute>
+                // {/* </ProtectedRoute> */}
               }
             />
             <Route
               path="/positions"
               element={
-                <ProtectedRoute>
+                // <ProtectedRoute>
                  
                   <Positions />
-                </ProtectedRoute>
+                // {/* </ProtectedRoute> */}
               }
             />
             <Route
               path="/funds"
               element={
-                <ProtectedRoute>
+                // <ProtectedRoute>
                   
                   <Funds />
-                </ProtectedRoute>
+                // {/* </ProtectedRoute> */}
               }
             />
             <Route
               path="/apps"
               element={
-                <ProtectedRoute>
+                // <ProtectedRoute>
                  
                   <Apps />
-                </ProtectedRoute>
+                // {/* </ProtectedRoute> */}
               }
             />
           </Routes>
