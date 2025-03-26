@@ -100,10 +100,12 @@ const Summary = () => {
   return (
     <>
       <div className="Logout">
-        <button onClick={Logout}>Logout</button>
+        <button>Logout</button>    
       </div>
+      {/* onClick={Logout} */}
       <div className="username">
-        <h6>Hi, {username}!</h6>
+        <h6>Hi, !</h6>
+        {/* {username} */}
         <hr className="divider" />
       </div>
 
