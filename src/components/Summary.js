@@ -1,14 +1,14 @@
 import React from "react";
-import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { useCookies } from "react-cookie";
-import axios from "axios";
+// import { useEffect, useState } from "react";
+// import { useNavigate } from "react-router-dom";
+// import { useCookies } from "react-cookie";
+// import axios from "axios";
 // import Cookiess from "universal-cookie";
 
 const Summary = () => {
-  const navigate = useNavigate();
-  const [cookies, removeCookies] = useCookies([]);
-  const [username, setUsername] = useState("");
+  // const navigate = useNavigate();
+  // const [cookies, removeCookies] = useCookies([]);
+  // const [username, setUsername] = useState("");
   // const cookiess = new Cookiess();
 
   // useEffect(() => {
@@ -46,66 +46,66 @@ const Summary = () => {
   // }, [cookies, navigate, removeCookies]); 
 
 
-  useEffect(() => {
-    const verifyCookie = async () => {
-      try {
-        const token = localStorage.getItem("token");
-        if (!token) {
-          setTimeout(() => {
-            console.log("fail-1")
-            navigate("/login");
-          }, 10);
-          return;
-        }
+  // useEffect(() => {
+  //   const verifyCookie = async () => {
+  //     try {
+  //       const token = localStorage.getItem("token");
+  //       if (!token) {
+  //         setTimeout(() => {
+  //           console.log("fail-1")
+  //           navigate("/login");
+  //         }, 10);
+  //         return;
+  //       }
   
-        console.log("Token found:", token);
+  //       console.log("Token found:", token);
   
-        const { data } = await axios.get(
-          "https://zerodha-clone-backend-9l0d.onrender.com/protected-route",
-          {
-            headers: {
-              Authorization: `Bearer ${token}`,
-            },
-          }
-        );
+  //       const { data } = await axios.get(
+  //         "https://zerodha-clone-backend-9l0d.onrender.com/protected-route",
+  //         {
+  //           headers: {
+  //             Authorization: `Bearer ${token}`,
+  //           },
+  //         }
+  //       );
   
-        console.log("API Response:", data);
+  //       console.log("API Response:", data);
   
-        // const { status, user } = data;
-        if (data.status === true) {
-          setUsername(data.user);
-        } else {
-          setTimeout(() => {
-            console.log("fail-2");
-            navigate("/login");
-          }, 10);
-        }
-      } catch (error) {
-        console.error("Error verifying token:", error);
-        setTimeout(() => {
-          console.log("fail-3");
-          navigate("/login");
-        }, 10);
-      }
-    };
+  //       // const { status, user } = data;
+  //       if (data.status === true) {
+  //         setUsername(data.user);
+  //       } else {
+  //         setTimeout(() => {
+  //           console.log("fail-2");
+  //           navigate("/login");
+  //         }, 10);
+  //       }
+  //     } catch (error) {
+  //       console.error("Error verifying token:", error);
+  //       setTimeout(() => {
+  //         console.log("fail-3");
+  //         navigate("/login");
+  //       }, 10);
+  //     }
+  //   };
   
-    verifyCookie();
-  }, [cookies, navigate, removeCookies]);
+  //   verifyCookie();
+  // }, [cookies, navigate, removeCookies]);
 
-  const Logout = () => {
-    removeCookies("token");
-    navigate("/signup");
-  };
+  // const Logout = () => {
+  //   removeCookies("token");
+  //   navigate("/signup");
+  // };
 
   return (
     <>
       <div className="Logout">
-        <button onClick={Logout}>Logout</button>    
+        <button >Logout</button>    
       </div>
-      
+      {/* onClick={Logout} */}
       <div className="username">
-        <h6>Hi, {username}!</h6>
-        
+        <h6>Hi, !</h6>
+        {/* {username} */}
         <hr className="divider" />
       </div>
 
